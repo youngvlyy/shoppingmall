@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import search from "../../img/icon/ico-search.svg"
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return(
         <Container>
             <Contents>
                 <Leftbtn>
-                    <a href="#">Login</a> 
-                    <a href="#">Join us</a> 
-                    <a href="#">My page</a> 
+                    <StyledLink to= '/login'>Login</StyledLink>
+                    <StyledLink to= '/Join_us'>Join us</StyledLink>
+                    <StyledLink to= '/My_page'>My page</StyledLink>
                 </Leftbtn>
-                <Logo href="#">SY mall</Logo>
+                <Logo to= '/main'>SY mall</Logo>
                 <Searchwrap>
                     <input type="text" title="검색인풋"/>
                     <button type="button" source={search}><span className="hide">검색버튼</span></button>
@@ -24,16 +25,17 @@ const Header = () => {
 const Leftbtn = styled.div`
     display: flex;
 
-    a{
-        text-decoration: none;
-        color: var(--font1);
-
-        & + a {
-            margin-left: 12px
-        }
-    }
 `
-const Logo = styled.a`
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: var(--font1);
+
+    & + & {
+        margin-left: 12px;
+    }
+
+`
+const Logo = styled(Link)`
     font-size: 30px;
     color: var(--font2);
     font-weight: bold;

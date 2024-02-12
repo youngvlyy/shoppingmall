@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes } from "react-router-dom";
 import styled from "styled-components";
 import Container from "../indexcss";
 import google from "../../img/icon/ico-google.png"
@@ -34,6 +35,7 @@ const LoginPage = () => {
                 </Rightcontent>
             </Contents>
         </Container>
+
     );
 };
 
